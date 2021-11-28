@@ -1,7 +1,13 @@
 function initMap() {
     let myLocation = [
         [{ lat: 10.253537281790836, lng: 105.97155223313051 }, "Viễn thông Vĩnh Long"],
-        [{ lat: 10.034445851895764, lng: 105.78735619060566 }, "Viễn thông Cần Thơ"],
+        [{ lat: 10.048996471891556, lng: 105.99959333472513}, "VNPT Tam Bình"],
+        [{ lat: 10.174209998988097, lng: 106.10979071454551 }, "VNPT Mang Thít"],
+        [{ lat: 10.091940005313761, lng: 106.19043187973773 }, "VNPT Vũng Liêm"],
+        [{ lat: 9.965596222127122, lng: 105.92045499404664 }, "VNPT Trà Ôn"],
+        [{ lat: 10.195538141677076, lng: 106.01420882438346}, "VNPT Long Hồ"],
+        [{ lat: 10.069065383343391, lng: 105.82075599985794}, "VNPT Bình Minh"],
+        [{ lat: 10.105273927367769, lng: 105.75388749192459}, "VNPT Bình Tân"],
         ];
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -9,7 +15,7 @@ function initMap() {
     // Khởi tạo bản đồ với các tham số cơ bản
     let map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 10.253537281790836, lng: 105.97155223313051 },
-        zoom: 18,
+        zoom: 11,
         gestureHandling: 'greedy',
         mapTypeControl: true,
     });
@@ -57,64 +63,8 @@ function initMap() {
                     .catch((e) => window.alert("Directions request failed due to " + e));
             });
         });
-    });
-
-    // Tạo infoWindow thông qua sự kiện click vào marker
-    // marker.addListener('click', function(e) {
-    //     navigator.geolocation.getCurrentPosition(function (position) {
-    //         let myLat = position.coords.latitude;
-    //         let myLng = position.coords.longitude;
-    //         // console.log(e.latLng.lat(), e.latLng.lng());
-    //         // console.log(myLat, myLng);
-    //         directionsService
-    //             .route({
-    //                 origin: {
-    //                     query: myLat + ',' + myLng
-    //                 },
-    //                 destination: {
-    //                     query: e.latLng.lat() + ',' + e.latLng.lng()
-    //                 },
-    //                 travelMode: google.maps.TravelMode.DRIVING,
-    //             })
-    //             .then((response) => {
-    //                 directionsRenderer.setDirections(response);
-    //             })
-    //             .catch((e) => window.alert("Directions request failed due to " + e));
-    //     });
-    // });   
+    }); 
 }
 
 
-// function calculateAndDisplayRoute(directionsService, directionsRender) {
-//     // Khởi tạo các tham số cơ bản
-//     let waypts = [];
-//     let checkboxArray = document.getElementById('waypoints');
-//     let checkbox = document.getElementById('waypoints');
-
-//     // Lấy danh sách các điểm đến
-//     for (let i = 0; i < checkboxArray.length; i++) {
-//         if (checkboxArray[i].checked) {
-//             waypts.push({
-//                 location: checkboxArray[i].value,
-//                 stopover: true
-//             });
-//         }
-//     }
-
-//     // Khởi tạo các tham số cơ bản
-//     let request = {
-//         origin: document.getElementById('start').value,
-//         destination: document.getElementById('end').value,
-//         waypoints: waypts,
-//         optimizeWaypoints: true,
-//         travelMode: 'DRIVING'
-//     };
-
-//     // Thực hiện tính toán và hiển thị đường đi
-//     directionsService.route(request, function (response, status) {
-//         if (status === 'OK') {
-//             directionsRender.setDirections(response);
-//         }
-//     });
-// }
-
+// Language: javascript
