@@ -20,7 +20,12 @@ function initMap() {
         mapTypeControl: true,
     });
 
-
+    // Load kml
+    // let kmlLayer = new google.maps.KmlLayer('Tinh_VL.KML', {
+    //     suppressInfoWindows: true,
+    //     preserveViewport: false,
+    //     map: map
+    // });
 
     // Thêm chỉ dẫn đường đi
     directionsRenderer.setMap(map);
@@ -63,6 +68,7 @@ function initMap() {
                     .catch((e) => window.alert("Directions request failed due to " + e));
             });
         });
+
     }); 
 }
 
